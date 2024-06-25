@@ -16,18 +16,17 @@ sudo apt purge piwiz -y
 sudo apt install wtype libglibmm-2.4-dev libglm-dev libxml2-dev libpango1.0-dev libcairo2-dev wayfire-dev \
 libwlroots-dev libwf-config-dev meson ninja-build libvulkan-dev interception-tools interception-tools-compat cmake -y
 
-cd /home/webcanvas/webcanvasbox
-git clone https://github.com/WayfireWM/wayfire-plugins-extra && cd /home/webcanvas/webcanvasbox/wayfire-plugins-extra && git checkout b698f61
+cd /home/webcanvas
+git clone https://github.com/WayfireWM/wayfire-plugins-extra && cd /home/webcanvas/wayfire-plugins-extra && git checkout b698f61
 meson setup build --prefix=/usr --buildtype=release
 ninja -C build && sudo ninja -C build install
-mv /home/webcanvas/webcanvasbox/.config/wayfire.ini /home/webcanvas/webcanvasbox/.config/wayfire.ini.bak
+sudo mv /home/webcanvas/.config/wayfire.ini /home/webcanvas/.config/wayfire.ini.bak
 
-cd /home/webcanvas/webcanvasbox
-git clone https://gitlab.com/interception/linux/plugins/hideaway.git && cd /home/webcanvas/webcanvasbox/hideaway
+cd /home/webcanvas
+git clone https://gitlab.com/interception/linux/plugins/hideaway.git && cd /home/webcanvas/hideaway
 cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build && cd build
-sudo cp /home/webcanvas/webcanvasbox/hideaway /usr/bin && sudo chmod +x /usr/bin/hideaway
+sudo cp /home/webcanvas/hideaway /usr/bin && sudo chmod +x /usr/bin/hideaway
 sudo cp /home/webcanvas/webcanvasbox/config.yaml /etc/interception/udevmon.d/config.yaml
 sudo systemctl restart udevmon
 
-rm /home/webcanvas/webcanvasbox/README.md
-cp /home/webcanvas/webcanvasbox/wayfire.ini ~/.config/wayfire.ini
+cp /home/webcanvas/webcanvasbox/wayfire.ini /home/webcanvas/.config/wayfire.ini
