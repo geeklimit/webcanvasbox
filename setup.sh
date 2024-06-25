@@ -27,7 +27,7 @@ cd ~
 git clone https://gitlab.com/interception/linux/plugins/hideaway.git && cd hideaway
 cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build && cd build
 sudo cp hideaway /usr/bin && sudo chmod +x /usr/bin/hideaway
-sudo cp config.yaml /etc/interception/udevmon.d/config.yaml
+sudo cp ~/webcanvasbox/config.yaml /etc/interception/udevmon.d/config.yaml
 sudo systemctl restart udevmon
 
 cd ~/webcanvasbox
