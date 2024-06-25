@@ -21,12 +21,11 @@ git clone https://github.com/WayfireWM/wayfire-plugins-extra && cd /home/webcanv
 meson setup build --prefix=/usr --buildtype=release
 ninja -C build && sudo ninja -C build install
 sudo mv /home/webcanvas/.config/wayfire.ini /home/webcanvas/.config/wayfire.ini.bak
+cp /home/webcanvas/webcanvasbox/wayfire.ini /home/webcanvas/.config/wayfire.ini
 
 cd /home/webcanvas
 git clone https://gitlab.com/interception/linux/plugins/hideaway.git && cd /home/webcanvas/hideaway
 cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build && cd build
-sudo cp /home/webcanvas/hideaway /usr/bin && sudo chmod +x /usr/bin/hideaway
+sudo cp /home/webcanvas/hideaway/build/hideaway /usr/bin && sudo chmod +x /usr/bin/hideaway
 sudo cp /home/webcanvas/webcanvasbox/config.yaml /etc/interception/udevmon.d/config.yaml
 sudo systemctl restart udevmon
-
-cp /home/webcanvas/webcanvasbox/wayfire.ini /home/webcanvas/.config/wayfire.ini
