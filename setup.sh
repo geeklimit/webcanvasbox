@@ -3,7 +3,8 @@
 #  Hardware: Libre AML-S905X-CC (Le Potato)
 #  Distro: Libre Raspbian Bookworm (https://distro.libre.computer/ci/raspbian/12/2023-10-10-raspbian-bookworm-arm64%2Baml-s905x-cc.img.xz)
 
-# Install distro, connect wired eth0 (and HDMI for testing) and power adapter
+# Install distro wih custom hostname, username/password from instructions + SSH turned on.
+# connect wired eth0 (and HDMI for testing) and power adapter
 # Power on, wait for Raspbian first-run background
 # Power cycle to clear first-run
 # Wait for boot, SSH into machine, run and clean this file with:
