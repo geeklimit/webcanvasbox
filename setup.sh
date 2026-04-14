@@ -12,10 +12,10 @@
 # git clone https://github.com/geeklimit/webcanvasbox.git && sudo bash webcanvasbox/setup.sh && sudo rm webcanvasbox/setup.sh && sudo reboot
 
 # Time to run: 6 minutes
-
+sudo apt update
 sudo apt purge piwiz -y
-sudo apt install wtype libglibmm-2.4-dev libglm-dev libxml2-dev libpango1.0-dev libcairo2-dev wayfire-dev \
-libwlroots-dev libwf-config-dev meson ninja-build libvulkan-dev interception-tools interception-tools-compat cmake -y
+sudo apt install wtype libglibmm-2.4-dev libglm-dev libxml2-dev libpango1.0-dev libcairo2-dev wayfire-dev -y
+sudo apt install libwlroots-dev libwf-config-dev meson ninja-build libvulkan-dev interception-tools interception-tools-compat cmake -y
 
 cd ~/webcanvasbox
 git clone https://github.com/WayfireWM/wayfire-plugins-extra && cd ~/webcanvasbox/wayfire-plugins-extra/ && git checkout b698f61
